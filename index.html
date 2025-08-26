@@ -18,6 +18,9 @@
             overflow-x: hidden;
             position: relative;
             backdrop-filter: blur(1px);
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
         }
 
         body::before {
@@ -46,6 +49,8 @@
             padding: 20px;
             position: relative;
             z-index: 2;
+            max-width: 100vw;
+            box-sizing: border-box;
         }
 
         /* Floating circles animation */
@@ -80,6 +85,8 @@
             text-align: center;
             animation: slideIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
             transform-origin: center;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .step.active { 
@@ -397,6 +404,58 @@
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
+        }
+        
+        /* Final Step Container Enhancements */
+        .final-step-container {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .final-step-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(239, 68, 68, 0.25);
+        }
+        
+        .final-step {
+            transition: all 0.3s ease;
+        }
+        
+        .final-step:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 30px rgba(239, 68, 68, 0.3);
+        }
+        
+        .final-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .final-step:hover .final-icon {
+            transform: scale(1.1);
+        }
+        
+        .success-indicator {
+            transition: all 0.3s ease;
+        }
+        
+        .final-step:hover .success-indicator {
+            opacity: 1 !important;
+            transform: translateY(-2px);
+        }
+        
+        /* Pulse animation for the final step */
+        @keyframes final-pulse {
+            0%, 100% { 
+                box-shadow: 0 8px 25px rgba(239, 68, 68, 0.2);
+                transform: scale(1.05);
+            }
+            50% { 
+                box-shadow: 0 12px 35px rgba(239, 68, 68, 0.3);
+                transform: scale(1.08);
+            }
+        }
+        
+        .final-step {
+            animation: final-pulse 3s ease-in-out infinite;
         }
 
         .step3 h2 {
@@ -1590,185 +1649,236 @@
         @media (max-width: 480px) {
             /* Global Phone Optimizations */
             .container {
-                padding: 15px;
+                padding: 10px;
+                min-height: 100vh;
+                justify-content: flex-start;
+                padding-top: 20px;
             }
             
             /* Step 1 Phone Optimizations */
             .step1 h1 { 
-                font-size: 2.2rem; 
-                margin-bottom: 15px;
+                font-size: 2rem; 
+                margin-bottom: 12px;
                 line-height: 1.2;
             }
             .step1 p { 
-                font-size: 1.1rem; 
-                margin-bottom: 30px;
+                font-size: 1rem; 
+                margin-bottom: 25px;
                 line-height: 1.5;
-            }
-            .hero-aurora {
-                height: 180px;
-                margin-bottom: 15px;
-            }
-            .overlay-title {
-                font-size: 2.2rem;
                 padding: 0 8px;
             }
+            .hero-aurora {
+                height: 160px;
+                margin-bottom: 12px;
+            }
+            .overlay-title {
+                font-size: 2rem;
+                padding: 0 6px;
+            }
             
-            /* Step 2 Phone Optimizations */
+            /* Step 2 Phone Optimizations - Critical for Content Display */
             .step2 h2 { 
-                font-size: 1.8rem; 
-                margin-bottom: 15px;
+                font-size: 1.6rem; 
+                margin-bottom: 12px;
                 line-height: 1.3;
+                padding: 0 8px;
             }
             .features { 
-                gap: 12px; 
-                margin: 20px 0; 
+                gap: 8px; 
+                margin: 15px 0; 
             }
             .feature { 
-                padding: 18px 12px; 
-                border-radius: 16px;
+                padding: 15px 10px; 
+                border-radius: 14px;
+                margin: 0 5px;
             }
             .feature-icon { 
-                width: 45px; 
-                height: 45px; 
-                margin-bottom: 10px; 
-            }
-            .feature h3 { 
-                font-size: 1.1rem; 
+                width: 40px; 
+                height: 40px; 
                 margin-bottom: 8px; 
             }
+            .feature h3 { 
+                font-size: 1rem; 
+                margin-bottom: 6px; 
+            }
             .feature p { 
-                font-size: 0.9rem; 
+                font-size: 0.85rem; 
                 line-height: 1.4; 
             }
             
-            /* Process Flow Phone Optimizations */
+            /* Step 2 Vibe Logo Mobile Optimization */
+            .step2 div[style*="display: flex; justify-content: center"] svg {
+                width: 70px !important;
+                height: 70px !important;
+            }
+            
+            /* Step 2 "From Idea to App" Section Mobile Optimization */
+            .step2 div[style*="background: rgba(255, 255, 255, 0.1)"] {
+                padding: 20px 15px !important;
+                margin-bottom: 20px !important;
+                gap: 15px !important;
+                font-size: 1.4rem !important;
+                line-height: 1.4 !important;
+                flex-wrap: wrap !important;
+                max-width: 100% !important;
+            }
+            
+            .step2 div[style*="background: rgba(255, 255, 255, 0.1)"] svg {
+                width: 36px !important;
+                height: 36px !important;
+            }
+            
+            /* Step 2 Description Text Mobile Optimization */
+            .step2 div[style*="font-size:0.95rem"] {
+                font-size: 0.85rem !important;
+                margin: 8px auto 10px !important;
+                padding: 0 10px !important;
+                line-height: 1.5 !important;
+            }
+            
+            /* Process Flow Phone Optimizations - Better Scaling */
             .process-flow {
-                gap: 3px;
-                padding: 8px 10px;
-                margin: 12px auto;
-                border-radius: 12px;
+                gap: 2px;
+                padding: 6px 8px;
+                margin: 10px auto;
+                border-radius: 10px;
+                max-width: 100%;
+                overflow-x: auto;
+                justify-content: center;
             }
             .process-step {
-                min-width: 55px;
-                padding: 5px 6px;
-                border-radius: 8px;
+                min-width: 50px;
+                padding: 4px 5px;
+                border-radius: 6px;
+                flex-shrink: 0;
             }
             .step-icon {
-                font-size: 1.1rem;
+                font-size: 1rem;
+            }
+            .step-icon svg {
+                width: 40px !important;
+                height: 40px !important;
             }
             .step-text {
-                font-size: 0.65rem;
-                line-height: 1.2;
+                font-size: 0.6rem;
+                line-height: 1.1;
+                white-space: nowrap;
             }
             .process-arrow {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
                 margin: 0 1px;
+                flex-shrink: 0;
             }
             
             /* Step 3 Phone Optimizations */
             .step3 { 
-                padding: 20px 12px; 
-                margin: 8px; 
-                border-radius: 16px;
+                padding: 18px 10px; 
+                margin: 6px; 
+                border-radius: 14px;
+                max-width: 100%;
             }
             .step3 h2 { 
-                font-size: 1.8rem; 
-                margin-bottom: 15px;
+                font-size: 1.6rem; 
+                margin-bottom: 12px;
                 line-height: 1.3;
             }
             
             /* Vibe Logo Phone Optimization */
             .step3 div[style*="display: flex; justify-content: center"] svg {
-                width: 70px !important;
-                height: 70px !important;
+                width: 65px !important;
+                height: 65px !important;
             }
             
             /* Event Details Phone Optimizations */
             .step3 div[style*="background: rgba(255, 255, 255, 0.08)"] {
-                padding: 12px !important;
-                margin-bottom: 20px !important;
-                border-radius: 12px !important;
+                padding: 10px !important;
+                margin-bottom: 18px !important;
+                border-radius: 10px !important;
             }
             .step3 span[style*="display: inline-flex"] {
-                font-size: 0.85rem !important;
-                margin-right: 8px !important;
-                gap: 6px !important;
+                font-size: 0.8rem !important;
+                margin-right: 6px !important;
+                gap: 5px !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
             }
             
             /* CTA Section Phone Optimizations */
             .step3 div[style*="font-size: 1.2rem"] {
-                font-size: 1rem !important;
-                margin-bottom: 15px !important;
+                font-size: 0.95rem !important;
+                margin-bottom: 12px !important;
             }
             
             /* EventMate Button Phone Optimizations */
             .eventmate-signup {
-                margin: 25px 0 !important;
+                margin: 20px 0 !important;
             }
             .eventmate-btn {
-                padding: 20px 16px !important;
-                font-size: 0.95rem !important;
+                padding: 18px 14px !important;
+                font-size: 0.9rem !important;
                 flex-direction: column !important;
-                gap: 10px !important;
+                gap: 8px !important;
                 min-width: 100% !important;
-                max-width: 300px !important;
-                border-radius: 16px !important;
+                max-width: 280px !important;
+                border-radius: 14px !important;
             }
             .btn-icon-svg {
-                width: 28px !important;
-                height: 28px !important;
+                width: 24px !important;
+                height: 24px !important;
             }
             .btn-text {
-                font-size: 0.95rem !important;
+                font-size: 0.9rem !important;
                 font-weight: 600 !important;
             }
             .btn-arrow {
-                font-size: 1rem !important;
+                font-size: 0.9rem !important;
             }
             
             /* Navigation Phone Optimizations */
             .vibe-nav {
-                bottom: 12px;
-                gap: 12px;
+                bottom: 10px;
+                gap: 10px;
             }
             .vibe-letter {
-                width: 42px;
-                height: 42px;
-                font-size: 1rem;
-                border-radius: 12px;
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+                border-radius: 10px;
             }
             .nav-super-e {
-                font-size: 1.4rem !important;
-                top: -14px !important;
-                right: -10px !important;
+                font-size: 1.2rem !important;
+                top: -12px !important;
+                right: -8px !important;
             }
             
             /* Jump to Signup Button Phone Optimizations */
             .jump-signup-btn {
-                bottom: 100px;
-                padding: 14px 20px;
-                font-size: 0.85rem;
-                min-width: 140px;
-                border-radius: 16px;
+                bottom: 90px;
+                padding: 12px 18px;
+                font-size: 0.8rem;
+                min-width: 130px;
+                border-radius: 14px;
             }
             
             /* CTA Buttons Phone Optimizations */
             .cta-section {
-                gap: 12px;
+                gap: 10px;
+                flex-direction: column;
+                align-items: center;
             }
             .primary-cta, .secondary-cta {
-                min-width: 220px;
-                padding: 14px 20px;
-                font-size: 0.9rem;
-                border-radius: 16px;
+                min-width: 200px;
+                padding: 12px 18px;
+                font-size: 0.85rem;
+                border-radius: 14px;
             }
             
             /* Matrix Rain Phone Optimizations */
             .matrix-inner {
-                gap: 6px;
+                gap: 4px;
             }
             .matrix .col {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
             }
             
             /* Additional Phone-Specific Touch Optimizations */
@@ -1779,11 +1889,11 @@
             
             /* Phone-Specific Spacing for Better Readability */
             .step1 p {
-                padding: 0 10px;
+                padding: 0 8px;
             }
             
             .step2 .features {
-                margin: 15px 0;
+                margin: 12px 0;
             }
             
             /* Phone-Specific Button Hover States */
@@ -1802,6 +1912,171 @@
             .primary-cta:focus, .secondary-cta:focus, .eventmate-btn:focus {
                 outline: 2px solid rgba(255, 255, 255, 0.5);
                 outline-offset: 2px;
+            }
+            
+            /* Ensure content fits within viewport */
+            .step {
+                max-width: 100vw;
+                overflow-x: hidden;
+            }
+            
+            /* Better text wrapping for long content */
+            .step2 div[style*="background: rgba(255, 255, 255, 0.1)"] span {
+                white-space: normal !important;
+                word-wrap: break-word !important;
+            }
+        }
+        
+        /* Extra Small Mobile Devices (≤360px) - Critical for very small phones */
+        @media (max-width: 360px) {
+            .container {
+                padding: 8px;
+                padding-top: 15px;
+            }
+            
+            /* Step 1 Ultra-Mobile Optimizations */
+            .step1 h1 { 
+                font-size: 1.8rem; 
+                margin-bottom: 10px;
+            }
+            .step1 p { 
+                font-size: 0.9rem; 
+                margin-bottom: 20px;
+                padding: 0 6px;
+            }
+            .hero-aurora {
+                height: 140px;
+                margin-bottom: 10px;
+            }
+            .overlay-title {
+                font-size: 1.8rem;
+                padding: 0 4px;
+            }
+            
+            /* Step 2 Ultra-Mobile Optimizations - Critical Content Scaling */
+            .step2 h2 { 
+                font-size: 1.4rem; 
+                margin-bottom: 10px;
+                padding: 0 6px;
+            }
+            .features { 
+                gap: 6px; 
+                margin: 10px 0; 
+            }
+            .feature { 
+                padding: 12px 8px; 
+                border-radius: 12px;
+                margin: 0 3px;
+            }
+            
+            /* Step 2 Vibe Logo Ultra-Mobile */
+            .step2 div[style*="display: flex; justify-content: center"] svg {
+                width: 60px !important;
+                height: 60px !important;
+            }
+            
+            /* Step 2 "From Idea to App" Ultra-Mobile */
+            .step2 div[style*="background: rgba(255, 255, 255, 0.1)"] {
+                padding: 15px 10px !important;
+                margin-bottom: 15px !important;
+                gap: 10px !important;
+                font-size: 1.2rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            .step2 div[style*="background: rgba(255, 255, 255, 0.1)"] svg {
+                width: 30px !important;
+                height: 30px !important;
+            }
+            
+            /* Step 2 Description Ultra-Mobile */
+            .step2 div[style*="font-size:0.95rem"] {
+                font-size: 0.8rem !important;
+                margin: 6px auto 8px !important;
+                padding: 0 8px !important;
+            }
+            
+            /* Process Flow Ultra-Mobile */
+            .process-flow {
+                gap: 1px;
+                padding: 4px 6px;
+                margin: 8px auto;
+                border-radius: 8px;
+            }
+            .process-step {
+                min-width: 45px;
+                padding: 3px 4px;
+                border-radius: 5px;
+            }
+            .step-icon svg {
+                width: 35px !important;
+                height: 35px !important;
+            }
+            .step-text {
+                font-size: 0.55rem;
+                line-height: 1.0;
+            }
+            .process-arrow {
+                font-size: 0.6rem;
+                margin: 0 0.5px;
+            }
+            
+            /* Step 3 Ultra-Mobile */
+            .step3 { 
+                padding: 15px 8px; 
+                margin: 5px; 
+                border-radius: 12px;
+            }
+            .step3 h2 { 
+                font-size: 1.4rem; 
+                margin-bottom: 10px;
+            }
+            
+            .step3 div[style*="display: flex; justify-content: center"] svg {
+                width: 55px !important;
+                height: 55px !important;
+            }
+            
+            /* EventMate Button Ultra-Mobile */
+            .eventmate-btn {
+                padding: 16px 12px !important;
+                font-size: 0.85rem !important;
+                gap: 6px !important;
+                max-width: 260px !important;
+            }
+            .btn-icon-svg {
+                width: 20px !important;
+                height: 20px !important;
+            }
+            
+            /* Navigation Ultra-Mobile */
+            .vibe-nav {
+                bottom: 8px;
+                gap: 8px;
+            }
+            .vibe-letter {
+                width: 34px;
+                height: 34px;
+                font-size: 0.8rem;
+                border-radius: 8px;
+            }
+            .nav-super-e {
+                font-size: 1rem !important;
+                top: -10px !important;
+                right: -6px !important;
+            }
+            
+            /* CTA Buttons Ultra-Mobile */
+            .primary-cta, .secondary-cta {
+                min-width: 180px;
+                padding: 10px 16px;
+                font-size: 0.8rem;
+                border-radius: 12px;
+            }
+            
+            /* Ensure all content fits */
+            .step {
+                padding: 0 5px;
             }
         }
             
@@ -1872,31 +2147,7 @@
                                                         </svg>
                                                     </div>
                                                     
-                                                    <!-- From Idea to App section - Moved below Vibe Logo -->
-                                                    <div style="margin-bottom: 32px; padding: 32px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(226, 232, 240, 0.3); border-radius: 12px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); text-align: center; display: flex; align-items: center; justify-content: center; gap: 24px; opacity: 0.9; font-size: 2rem; line-height: 1.6; max-width: 640px; margin-left: auto; margin-right: auto;">
-                                                        <span>From</span>
-                                                        <!-- Idea icon -->
-                                                        <svg width="48px" height="48px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #a78bfa;">
-                                                            <path d="M21 2L20 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                            <path d="M3 2L4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                            <path d="M21 16L20 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                            <path d="M3 16L4 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                            <path d="M9 18H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                            <path d="M10 21H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                            <path d="M11.9998 3C7.9997 3 5.95186 4.95029 5.99985 8C6.02324 9.48689 6.4997 10.5 7.49985 11.5C8.5 12.5 9 13 8.99985 15H14.9998C15 13.0001 15.5 12.5 16.4997 11.5001L16.4998 11.5C17.4997 10.5 17.9765 9.48689 17.9998 8C18.0478 4.95029 16 3 11.9998 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        </svg>
-                                                        <span>to</span>
-                                                        <!-- App icon -->
-                                                        <svg width="48px" height="48px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #f59e0b;">
-                                                            <path d="M21 9V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                            <path d="M3 15V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                            <path d="M12 21V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                            <path d="M12 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                            <path d="M12 15L3 9L12 3L21 9L12 15Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                            <path d="M12 21L3 15L12 9L21 15L12 21Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        </svg>
-                                                        <span>in 8 hours</span>
-                                                    </div>
+
                                                     
                                                     <div style="font-size:0.95rem; opacity:0.9; margin:12px auto 14px; line-height:1.6; max-width:640px; font-style: italic;">
                                                         A one‑day, high‑energy build sprint in Zurich where small teams design, build, and ship a working app in 8 hours — no slides, just shipping.
@@ -1941,20 +2192,23 @@
                                                             </span>
                                                             <span class="step-text">Code hard</span>
                                                         </div>
-                                                        <div class="process-arrow">→</div>
-                                                        <div class="process-step">
-                                                            <span class="step-icon">
-                                                                <!-- Demo icon -->
-                                                                <svg width="51px" height="51px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #ef4444;">
-                                                                    <path d="M22 4.6V17.4C22 17.7314 21.7314 18 21.4 18H2.6C2.26863 18 2 17.7314 2 17.4V4.6C2 4.26863 2.26863 4 2.6 4H21.4C21.7314 4 22 4.26863 22 4.6Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                    <path d="M8.5 21.5L12 18L15.5 21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                    <path d="M12 2V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                    <path d="M9 12V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                    <path d="M12 10V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                    <path d="M15 8V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="step-text">Demo live</span>
+                                                    </div>
+                                                    <div class="process-step final-step" style="margin-top: 20px; background: rgba(255, 255, 255, 0.15); border: 2px solid rgba(239, 68, 68, 0.4); border-radius: 16px; padding: 20px; box-shadow: 0 8px 25px rgba(239, 68, 68, 0.2); transform: scale(1.05); position: relative; z-index: 2; display: inline-block;">
+                                                        <span class="step-icon final-icon" style="margin-bottom: 12px; display: block;">
+                                                            <!-- Demo icon with enhanced styling -->
+                                                            <svg width="60px" height="60px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #ef4444; filter: drop-shadow(0 4px 8px rgba(239, 68, 68, 0.3));">
+                                                                <path d="M22 4.6V17.4C22 17.7314 21.7314 18 21.4 18H2.6C2.26863 18 2 17.7314 2 17.4V4.6C2 4.26863 2.26863 4 2.6 4H21.4C21.7314 4 22 4.26863 22 4.6Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M12 2V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M9 12V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M12 10V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M15 8V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="step-text final-text" style="font-size: 1.1rem; font-weight: 700; color: #ffffff; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); display: block; text-align: center;">Demo live</span>
+                                                        
+                                                        <!-- Success indicator -->
+                                                        <div class="success-indicator" style="margin-top: 8px; text-align: center; opacity: 0.8;">
+                                                            <span style="color: #10b981; font-size: 0.9rem;">✨ Ready to ship!</span>
                                                         </div>
                                                     </div>
                                                 </div>
