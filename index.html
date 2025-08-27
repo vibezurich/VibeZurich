@@ -49,9 +49,13 @@
             padding: 8px; /* Minimal padding for edge breathing room */
             position: relative;
             z-index: 2;
-            max-width: 100vw;
-            width: 100%; /* Ensure full width utilization */
-            box-sizing: border-box;
+            max-width: none;
+            width: auto;
+            box-sizing: content-box;
+            background: transparent;
+            backdrop-filter: none;
+            border: none;
+            box-shadow: none;
         }
 
         /* Floating circles animation */
@@ -241,23 +245,26 @@
 
         /* Step 2 */
         .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
             margin: 40px 0;
-            width: 100%; /* Ensure full width utilization */
+            width: 100%;
+            text-align: center;
         }
 
         .feature {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 35px 30px;
+            background: transparent;
+            backdrop-filter: none;
+            border-radius: 0;
+            padding: 0;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.15);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            transition: none;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .feature::before {
@@ -297,6 +304,37 @@
         }
         .feature h3 { font-size: 1.4rem; margin-bottom: 10px; }
         .feature p { opacity: 0.8; line-height: 1.6; }
+        
+        /* Simple Sponsors Section */
+        .sponsors-simple {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .sponsor-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .sponsor-logo:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+        
+        .sponsor-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        
         .step2 h2 { font-size: 2.5rem; margin-bottom: 20px; }
 
         /* Process Flow - Better UX for step visualization */
@@ -363,6 +401,23 @@
             50% { opacity: 0.9; transform: scale(1.1); }
         }
 
+        /* Step 3 Container - Make Completely Transparent */
+        .step.step3 {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            width: auto !important;
+            max-width: none !important;
+            backdrop-filter: none !important;
+            border-radius: 0 !important;
+            /* Override base .step properties that create container effect */
+            box-sizing: content-box !important;
+            transform-origin: initial !important;
+            animation: none !important;
+        }
+
         /* Mobile responsiveness for process flow */
         @media (max-width: 768px) {
             .process-flow {
@@ -392,50 +447,20 @@
 
         /* Step 3 - Enhanced UX */
         .step3 {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(25px);
-            border-radius: 32px;
-            padding: 60px 50px;
-            border: 1px solid rgba(255,255,255,0.15);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            background: transparent !important;
+            backdrop-filter: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
             position: relative;
-            overflow: hidden;
-            max-width: 100%; /* Use full available width */
-            width: 100%; /* Ensure full width utilization */
-            margin: 0 auto; /* Removed excessive bottom margin */
+            overflow: visible;
+            max-width: none !important;
+            width: auto !important;
+            margin: 0 !important;
         }
 
-        .step3::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-        
-        .step3::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, 
-                rgba(255, 107, 107, 0.05), 
-                rgba(78, 205, 196, 0.05), 
-                rgba(69, 183, 209, 0.05)
-            );
-            border-radius: 32px;
-            opacity: 0;
-            transition: opacity 0.6s ease;
-        }
-        
-        .step3:hover::after {
-            opacity: 1;
-        }
+        /* Removed pseudo-elements that were creating glassmorphism effects */
 
         @keyframes rotate {
             from { transform: rotate(0deg); }
@@ -1620,6 +1645,17 @@
                 margin-bottom: 20px !important;
             }
             
+            /* Sponsors Section Mobile Optimizations */
+            .sponsors-simple {
+                gap: 20px;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+            .sponsor-logo img {
+                width: 100px;
+                height: 50px;
+            }
+            
             /* EventMate Button Mobile Optimizations */
             .eventmate-btn {
                 padding: 18px 25px !important;
@@ -1854,6 +1890,17 @@
                 margin: 8px auto 10px !important;
                 padding: 0 10px !important;
                 line-height: 1.5 !important;
+            }
+            
+            /* Sponsors Section Phone Optimizations */
+            .sponsors-simple {
+                gap: 15px;
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+            .sponsor-logo img {
+                width: 80px;
+                height: 45px;
             }
             
             /* Process Flow Phone Optimizations - Better Scaling */
@@ -2270,13 +2317,25 @@
                      <button class="primary-cta" onclick="goToStep(3)">🚀 Reserve My Spot</button>
                      <button class="secondary-cta" onclick="nextStep()">Tell Me More</button>
                  </div>
+                 
+                 <!-- Stylish Horizontal Divider Above Sponsors -->
+                 <div style="text-align: center; margin: 25px auto 20px auto; width: 240px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); border-radius: 1px;"></div>
+                 
+                 <!-- Simple Sponsors Section -->
+                 <div class="sponsors-simple">
+                     <a href="https://lovable.dev/?via=vibe-zurich" target="_blank" rel="noopener noreferrer" class="sponsor-logo">
+                         <img src="assets/logoblack.svg" alt="Lovable" width="120" height="60">
+                     </a>
+                     <div class="sponsor-logo">SPONSOR 2</div>
+                     <div class="sponsor-logo">SPONSOR 3</div>
+                     <div class="sponsor-logo">SPONSOR 4</div>
+                 </div>
              </div>
 
                                   <!-- Step 2: Your VibeCoding Day -->
                                          <div class="step step2">
                                             <h2>Vibe Coding: Ship a real app in one day</h2>
                                             <div class="features">
-                                                <div class="feature" style="grid-column: 1 / -1; text-align: center;">
                                                     <!-- Vibe Logo SVG - Mixed Colors with Thicker Lines -->
                                                     <div style="display: flex; justify-content: center; margin-bottom: 10px; margin-top: -10px;">
                                                         <svg width="96" height="96" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" style="enable-background:new 0 0 128 128" xml:space="preserve">
@@ -2285,12 +2344,13 @@
                                                         </svg>
                                                     </div>
                                                     
-
-                                                    
+                                                <!-- Description Text -->
                                                     <div style="font-size:0.95rem; opacity:0.9; margin:12px auto 14px; line-height:1.6; max-width:640px; font-style: italic;">
                                                         A one‑day, high‑energy build sprint in Zurich where small teams design, build, and ship a working app in 8 hours — no slides, just shipping.
                                                     </div>
-                                                    <div class="process-flow">
+                                                
+                                                <!-- Process Steps -->
+                                                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px;">
                                                         <div class="process-step">
                                                             <span class="step-icon">
                                                                 <!-- Group icon -->
@@ -2330,11 +2390,13 @@
                                                             </span>
                                                             <span class="step-text">Code hard</span>
                                                         </div>
-                                                    </div>
-                                                    <div class="process-step final-step" style="margin-top: 20px; background: rgba(255, 255, 255, 0.15); border: 2px solid rgba(239, 68, 68, 0.4); border-radius: 16px; padding: 20px; box-shadow: 0 8px 25px rgba(239, 68, 68, 0.2); transform: scale(1.05); position: relative; z-index: 2; display: inline-block;">
-                                                        <span class="step-icon final-icon" style="margin-bottom: 12px; display: block;">
-                                                            <!-- Demo icon with enhanced styling -->
-                                                            <svg width="60px" height="60px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #ef4444; filter: drop-shadow(0 4px 8px rgba(239, 68, 68, 0.3));">
+                                                </div>
+                                                
+                                                <!-- Final Enhanced Step -->
+                                                <div class="process-step final-step" style="margin-top: 20px; background: rgba(255, 255, 255, 0.15); border: 2px solid rgba(239, 68, 68, 0.4); border-radius: 16px; padding: 20px; box-shadow: 0 8px 25px rgba(239, 68, 68, 0.2); transform: scale(1.05); position: relative; z-index: 2; display: inline-block;">
+                                                    <span class="step-icon final-icon" style="margin-bottom: 12px; display: block;">
+                                                        <!-- Demo icon with enhanced styling -->
+                                                        <svg width="60px" height="60px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #ef4444; filter: drop-shadow(0 4px 8px rgba(239, 68, 68, 0.3));">
                                                                     <path d="M22 4.6V17.4C22 17.7314 21.7314 18 21.4 18H2.6C2.26863 18 2 17.7314 2 17.4V4.6C2 4.26863 2.26863 4 2.6 4H21.4C21.7314 4 22 4.26863 22 4.6Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                                     <path d="M12 2V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                                     <path d="M9 12V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2342,10 +2404,7 @@
                                                                     <path d="M15 8V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                                 </svg>
                                                             </span>
-                                                        <span class="step-text final-text" style="font-size: 1.1rem; font-weight: 700; color: #ffffff; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); display: block; text-align: center;">Demo live</span>
-                                                        
-
-                                                    </div>
+                                                    <span class="step-text final-text" style="font-size: 1.1rem; font-weight: 700; color: #ffffff; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); display: block; text-align: center;">Demo live</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -2363,24 +2422,24 @@
             <!-- Enhanced Main Heading with Better Typography -->
             <h2 style="margin-bottom: 15px;">Ready for the Rush?</h2>
             
-            <!-- Event Details Section - Separated into 3 Distinct Containers -->
-            <div style="display: flex; justify-content: center; align-items: stretch; gap: 15px; flex-wrap: wrap; margin-bottom: 30px;">
-                <!-- Date Container -->
-                <div style="text-align: center; padding: 20px 25px; background: rgba(255, 255, 255, 0.08); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.15); min-width: 200px; flex: 1; max-width: 250px;">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">📅</div>
-                    <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.9;">Saturday, September 20th</div>
-                </div>
-                
-                <!-- Time Container -->
-                <div style="text-align: center; padding: 20px 25px; background: rgba(255, 255, 255, 0.08); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.15); min-width: 200px; flex: 1; max-width: 250px;">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">⏰</div>
-                    <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.9;">10:00 - 19:00</div>
-                </div>
-                
-                <!-- Location Container -->
-                <div style="text-align: center; padding: 20px 25px; background: rgba(255, 255, 255, 0.08); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.15); min-width: 200px; flex: 1; max-width: 250px;">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">📍</div>
-                    <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.9;">Spaces, Zurich</div>
+        <!-- Event Details - Individual Containers -->
+        <div style="display: flex; justify-content: center; align-items: stretch; gap: 15px; flex-wrap: wrap; margin-bottom: 30px;">
+            <!-- Date Container -->
+            <div style="text-align: center; padding: 20px 25px; background: rgba(255, 255, 255, 0.08); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.15); min-width: 200px; flex: 1; max-width: 250px;">
+                <div style="font-size: 2rem; margin-bottom: 10px;">📅</div>
+                <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.9;">Saturday, September 20th</div>
+            </div>
+            
+            <!-- Time Container -->
+            <div style="text-align: center; padding: 20px 25px; background: rgba(255, 255, 255, 0.08); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.15); min-width: 200px; flex: 1; max-width: 250px;">
+                <div style="font-size: 2rem; margin-bottom: 10px;">⏰</div>
+                <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.9;">10:00 - 19:00</div>
+            </div>
+            
+            <!-- Location Container -->
+            <div style="text-align: center; padding: 20px 25px; background: rgba(255, 255, 255, 0.15); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.15); min-width: 200px; flex: 1; max-width: 250px;">
+                <div style="font-size: 2rem; margin-bottom: 10px;">📍</div>
+                <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.9;">Spaces, Zurich</div>
                 </div>
             </div>
             
@@ -2389,37 +2448,46 @@
                 <p style="font-size: 1.2rem; margin-bottom: 20px; opacity: 0.9; font-weight: 500;">🚀 Secure your spot now - Limited availability!</p>
             </div>
             
-            <!-- EventMate Signup Button - UX Standardized -->
+        <!-- EventMate Signup Button - UX Standardized -->
             <div class="eventmate-signup">
-                <button 
-                    type="button"
-                    class="eventmate-btn" 
-                    onclick="handleEventMateClick()"
-                    aria-label="Secure your spot at VibeZurich event"
-                    aria-describedby="btn-description">
-                    <span class="btn-text">SIGNUP NOW</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="external-link-icon" aria-hidden="true">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <polyline points="15,3 21,3 21,9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <line x1="10" y1="14" x2="21" y2="3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <div id="btn-description" class="sr-only">Opens EventMate registration in a new tab</div>
+            <button 
+                type="button"
+                class="eventmate-btn" 
+                onclick="handleEventMateClick()"
+                aria-label="Secure your spot at VibeZurich event"
+                aria-describedby="btn-description">
+                <span class="btn-text">SIGNUP NOW</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="external-link-icon" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="15,3 21,3 21,9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="10" y1="14" x2="21" y2="3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div id="btn-description" class="sr-only">Opens EventMate registration in a new tab</div>
             </div>
             
-
+        <!-- Stylish Horizontal Divider -->
+        <div style="text-align: center; margin: 25px auto 20px auto; width: 240px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); border-radius: 1px;"></div>
+            
+        <!-- EventMate Logo -->
+        <div style="text-align: center; margin-top: 20px;">
+            <div style="font-family: 'Indie Flower', cursive; font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 4px;">Event managed through</div>
+            <a href="https://eventmate.live/en/" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
+                <img src="assets/eventmatelogo.svg" alt="EventMate" style="opacity: 0.8; transform: scale(0.35); cursor: pointer; transition: opacity 0.3s ease;">
+            </a>
         </div>
+    </div>
 
         <!-- Jump to Signup Button - visible only on step 2, positioned above VIBE navigation -->
-        <div class="jump-signup-btn" onclick="goToStep(3)" id="jumpSignupBtn">
-            <span>🚀 SIGNUP NOW</span>
-        </div>
+    <div class="jump-signup-btn" onclick="goToStep(3)" id="jumpSignupBtn">
+        <span>🚀 SIGNUP NOW</span>
+    </div>
 
         <!-- VIB Navigation (E as superscript outside B) - Now flows with content -->
-        <div class="vibe-nav punk">
-            <div class="vibe-letter active" onclick="goToStep(1)">V</div>
-            <div class="vibe-letter" onclick="goToStep(2)">I</div>
-            <div class="vibe-letter has-super-e" onclick="goToStep(3)">B<span class="nav-super-e" aria-hidden="true">E</span></div>
+    <div class="vibe-nav punk">
+        <div class="vibe-letter active" onclick="goToStep(1)">V</div>
+        <div class="vibe-letter" onclick="goToStep(2)">I</div>
+        <div class="vibe-letter has-super-e" onclick="goToStep(3)">B<span class="nav-super-e" aria-hidden="true">E</span></div>
         </div>
 
     </div>
