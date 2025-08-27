@@ -781,10 +781,8 @@
 
         /* Jump to Signup Button */
         .jump-signup-btn {
-            position: fixed;
-            bottom: 120px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative; /* Changed from fixed to relative to flow with content */
+            margin: 30px auto; /* Center horizontally and add vertical spacing */
             background: linear-gradient(135deg, #ff6b6b, #ee5a24);
             color: white;
             padding: 18px 30px;
@@ -807,14 +805,10 @@
         }
 
         .jump-signup-btn:active {
-            transform: translateX(-50%) translateY(1px);
+            transform: translateY(1px); /* Removed translateX since button is now centered with margin: auto */
         }
 
-        /* Hide signup button on steps 1 and 3 */
-        .step1.active ~ .jump-signup-btn,
-        .step3.active ~ .jump-signup-btn {
-            display: none;
-        }
+        /* Button visibility is now controlled by JavaScript in goToStep function */
 
         @keyframes pulse-glow {
             0%, 100% { box-shadow: 0 10px 25px rgba(238, 90, 36, 0.3); }
@@ -1617,9 +1611,7 @@
             }
             
             .jump-signup-btn {
-                bottom: 110px;
-                left: 50%;
-                transform: translateX(-50%);
+                margin: 25px auto; /* Updated for relative positioning */
                 padding: 16px 25px;
                 font-size: 0.9rem;
                 min-width: 160px;
@@ -1950,7 +1942,7 @@
             
             /* Jump to Signup Button Phone Optimizations */
             .jump-signup-btn {
-                bottom: 90px;
+                margin: 20px auto; /* Updated for relative positioning */
                 padding: 12px 18px;
                 font-size: 0.8rem;
                 min-width: 130px;
@@ -2370,6 +2362,11 @@
 
         </div>
 
+        <!-- Jump to Signup Button - visible only on step 2, positioned above VIBE navigation -->
+        <div class="jump-signup-btn" onclick="goToStep(3)" id="jumpSignupBtn">
+            <span>🚀 SIGNUP NOW</span>
+        </div>
+
         <!-- VIB Navigation (E as superscript outside B) - Now flows with content -->
         <div class="vibe-nav punk">
             <div class="vibe-letter active" onclick="goToStep(1)">V</div>
@@ -2378,11 +2375,6 @@
         </div>
 
         
-    </div>
-
-    <!-- Jump to Signup Button - visible only on step 2 -->
-    <div class="jump-signup-btn" onclick="goToStep(3)" id="jumpSignupBtn">
-        <span>🚀 SIGNUP NOW</span>
     </div>
 
 
