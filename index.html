@@ -300,6 +300,8 @@
             text-decoration: none;
             cursor: pointer;
             transition: all 0.3s ease;
+            min-height: 60px;
+            flex-shrink: 0;
         }
         
         .sponsor-logo:hover {
@@ -308,8 +310,9 @@
         }
         
         .sponsor-logo img {
-            max-width: 100%;
-            height: auto;
+            width: 120px;
+            height: 60px;
+            object-fit: contain;
         }
         
         .step2 h2 { font-size: 2.5rem; margin-bottom: 20px; }
@@ -918,6 +921,12 @@
             .sponsor-logo img {
                 width: 100px;
                 height: 50px;
+                object-fit: contain;
+            }
+            .sponsor-logo:not(:has(img)) {
+                width: 100px !important;
+                height: 50px !important;
+                font-size: 0.7rem !important;
             }
             
             /* EventMate Button Mobile Optimizations */
@@ -1113,7 +1122,13 @@
             }
             .sponsor-logo img {
                 width: 80px;
-                height: 45px;
+                height: 40px;
+                object-fit: contain;
+            }
+            .sponsor-logo:not(:has(img)) {
+                width: 80px !important;
+                height: 40px !important;
+                font-size: 0.6rem !important;
             }
             
             /* Process Flow Phone Optimizations - Better Scaling */
@@ -1518,8 +1533,8 @@
                      <a href="https://lovable.dev/?via=vibe-zurich" target="_blank" rel="noopener noreferrer" class="sponsor-logo">
                          <img src="assets/logoblack.svg" alt="Lovable" width="120" height="60">
                      </a>
-                     <div class="sponsor-logo">SPONSOR 2</div>
-                     <div class="sponsor-logo">SPONSOR 3</div>
+                     <div class="sponsor-logo" style="width: 120px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; color: rgba(255, 255, 255, 0.7); font-size: 0.8rem; font-weight: 500;">SPONSOR 2</div>
+                     <div class="sponsor-logo" style="width: 120px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; color: rgba(255, 255, 255, 0.7); font-size: 0.8rem; font-weight: 500;">SPONSOR 3</div>
                      <a href="https://nostr.com" target="_blank" rel="noopener noreferrer" class="sponsor-logo">
                          <img src="assets/nostr-logo.png" alt="Nostr" width="120" height="60">
                      </a>
