@@ -1,5 +1,5 @@
 ---
-title: AWE.SOME
+title: VibeZurich
 headless: true
 resources:
     - name: about

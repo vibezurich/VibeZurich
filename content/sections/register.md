@@ -2,4 +2,10 @@
 title: Registration
 ---
 
-Maecenas pulvinar ultricies dolor, vitae sagittis nunc aliquam non. Cras vitae eros mi.
+![Join the Adventure](/img/undraw_calendar_8r6s-3.svg)
+
+  
+     
+
+👉 **Spots are limited!**  
+Fill out the form below to secure your place and vibe with the best creators in town.

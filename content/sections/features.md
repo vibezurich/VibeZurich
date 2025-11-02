@@ -1,8 +1,7 @@
 ---
-title: Most AWE.SOME Features
-afterTitle: ...and so much more!
+title: What is VibeZurich?
+afterTitle: Connect. Collaborate. Conceptualize. Code. Create.
 ---
 
-Pellentesque ullamcorper fringilla odio at pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla mattis erat dui, ut tempor lectus dictum id.
+A one‑day, high‑energy build sprint in Zurich where small teams design, build, and ship a working app in 8 hours! No slides, just shipping.
 <br><br>
-Cras mattis justo id convallis porta.

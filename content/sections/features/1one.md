@@ -1,7 +1,7 @@
 ---
-title: AWE.SOME Feature One
+title: Idea Generation
 weight: 1
 icon: icon1.svg
 ---
 
-Maecenas pulvinar ultricies dolor, vitae sagittis nunc aliquam non. Cras vitae eros mi. Pellentesque ac orci mi. Ut dignissim tincidunt ex id tincidunt.
+Brainstorm freely. An iOS app, a startup idea, an Agentic AI workflow. Anything is possible. There are no limits, only imagination.

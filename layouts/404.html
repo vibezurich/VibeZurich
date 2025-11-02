@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "navbar.html" . }}
+<div class="min-h-screen flex flex-col justify-center items-center bg-gray-200 px-4">
+    <!-- Logo (optional) -->
+    <img src="/img/404.svg" alt="VibeZurich Logo" class="w-24 h-24 mb-8">
+
+<!-- 404 / Page Not Found 
+    <h1 class="text-6xl sm:text-8xl font-extrabold text-gray-800 leading-none mb-4 text-center">
+    404
+    </h1>
+    <h2 class="text-[12rem] sm:text-[15rem] font-light text-gray-600 mb-8 text-center">
+    Page Not Found
+    </h2>
+-->
+<!-- Description -->
+    <p class="text-3xl sm:text-4xl text-gray-500 mb-12 text-center leading-relaxed">
+    Oops! The page you're looking for seems to have wandered off.<br>
+    Don't worry, it happens to the best of us.
+    </p>
+    <br><br> <!-- simple page break with extra space -->
+    <!-- Back to Home button -->
+    <a 
+    href="/" 
+    class="px-10 py-2 text-gray-200 bg-pink-600 shadow-md text-lg hover:bg-gray-800 hover:border-pink-600 w-auto text-center font-semibold sm:ml-4 sm:my-0 my-2"
+>
+    ← Back Home Now
+</a>
+
+</div>
+{{ end }}

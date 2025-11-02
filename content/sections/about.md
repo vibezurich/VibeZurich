@@ -1,7 +1,7 @@
 ---
-title: AWE.SOME Heading
+title: VibeZurich November 2025
 ---
 
-Maecenas pulvinar ultricies dolor, vitae sagittis nunc aliquam non. Cras vitae eros mi. Pellentesque ac orci mi. Ut dignissim tincidunt ex id tincidunt.
-<br><br>
-**Vivamus vitae erat vel tellus condimentum consectetur.**
+One day. Real apps. Built together. Join Zurich's most intense coding events where teams build and deploy actual apps in just 8 hours!
+<!-- <br><br>
+**Vivamus vitae erat vel tellus condimentum consectetur.** -->

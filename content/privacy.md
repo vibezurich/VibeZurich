@@ -1,26 +1,93 @@
 ---
-title: Privacy Policy
+title: "Privacy Policy"
+description: "VibeZurich Privacy Policy – Swiss/European Data Protection"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id rhoncus est. Nullam sit amet justo nisi. Aliquam elementum iaculis nulla bibendum congue. Integer convallis ut nisi at tincidunt. Sed eu diam ex. Ut efficitur velit ut ultrices semper. Morbi suscipit ut purus a placerat. Cras massa lorem, pretium et nibh in, faucibus fermentum dolor. Nulla lacinia malesuada molestie. Proin et risus turpis. Aenean lacinia, orci at egestas fringilla, sem libero facilisis lectus, ut porta justo ligula a quam. Mauris vulputate purus mauris, eget semper ante rutrum id. Duis vestibulum, turpis at ultricies aliquam, enim dolor lobortis leo, at laoreet elit odio at nunc. Aliquam sit amet erat mi.
 
-Cras mattis justo id convallis porta. Pellentesque ullamcorper fringilla odio at pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla mattis erat dui, ut tempor lectus dictum id. Mauris ornare massa a nisi gravida, id ultrices ex cursus. Donec quis porttitor nisl, non viverra dui. Donec nec gravida arcu. Pellentesque dignissim at libero id bibendum. Vivamus pulvinar nibh risus, et egestas odio interdum id. Cras eleifend risus molestie mollis finibus. Aenean tortor elit, accumsan vel fermentum pharetra, molestie ut felis.
+**Effective date:** January 2025
 
-Maecenas pulvinar ultricies dolor, vitae sagittis nunc aliquam non. Cras vitae eros mi. Pellentesque ac orci mi. Ut dignissim tincidunt ex id tincidunt. Aliquam semper felis sed leo sodales scelerisque. Vivamus vitae erat vel tellus condimentum consectetur at ac velit. Mauris massa tortor, cursus sit amet turpis in, lacinia ultricies nulla.
+---
 
-Integer finibus sem sit amet diam luctus, ut posuere enim dapibus. Nunc euismod dignissim dui a maximus. Phasellus pulvinar neque at lorem ultricies suscipit. Maecenas felis erat, ornare eget egestas et, ultricies vitae ante. In convallis quam lectus, sit amet elementum ligula pulvinar ac. Integer sapien ipsum, congue a purus vel, sollicitudin lacinia ligula. Ut varius sit amet lectus quis congue. Ut viverra lectus tellus, a pharetra neque egestas eu. Morbi feugiat, arcu id bibendum vulputate, risus mi finibus enim, sed pulvinar ipsum sem eu risus. Aenean accumsan elementum ipsum, eu porttitor libero auctor at. Duis nec ipsum velit. Aliquam ac ullamcorper nisl. Duis mattis malesuada leo, quis egestas turpis molestie nec. Curabitur dui tortor, volutpat quis varius et, posuere eget augue. Praesent sed pretium dui. Vivamus auctor ex vitae nisl commodo interdum.
+## 1. Who we are
+We are **VibeZurich** (“we”, “us”, “our”), based in Zurich, Switzerland.  
+This Privacy Policy explains how we collect, process, and protect your personal data.
 
-Nam non quam vel velit sagittis consequat non vel odio. Phasellus condimentum dictum orci, quis rhoncus lacus hendrerit non. Ut vel nisl lectus. Duis vitae varius enim. Morbi placerat urna sit amet sollicitudin viverra. Vivamus maximus metus ac ornare venenatis. Ut suscipit nec sapien ac fringilla. Phasellus et justo eget odio lacinia feugiat. Nullam laoreet eros a lectus pretium, sed euismod velit tincidunt.
+---
 
-#### Website enhancements ####
+## 2. What personal data we collect
+We may collect and process the following categories of personal data:
 
-This website uses the follwing packages from <a href="https://unpkg.com" rel="noopener" target="_blank" title="UNPKG">unpkg.com</a>:
+- **Contact information** (e.g., email address) when you subscribe or register.  
+- **Usage data** (e.g., IP address, device/browser type) when you visit our website.  
+- **Consent records** (e.g., checkbox indicating agreement with our Privacy Policy).  
+- Any other data you voluntarily provide (e.g., via contact form or registration).
 
-- &dash; popper.js
-- &dash; tippy.js
+---
 
-Using these packages, personal data may be transmitted.
+## 3. Why we collect and use your data
+Your personal data is used for the following purposes:
 
-### Your rights ###
+- To provide you with our services or subscribe you to our mailing list.  
+- To review and improve our content and user experience.  
+- To comply with legal obligations or exercise our legitimate interests (e.g., fraud prevention).
 
-Integer finibus sem sit amet diam luctus, ut posuere enim dapibus. Nunc euismod dignissim dui a maximus. Phasellus pulvinar neque at lorem ultricies suscipit. Maecenas felis erat, ornare eget egestas et, ultricies vitae ante. In convallis quam lectus, sit amet elementum ligula pulvinar ac. Integer sapien ipsum, congue a purus vel, sollicitudin lacinia ligula. Ut varius sit amet lectus quis congue. Ut viverra lectus tellus, a pharetra neque egestas eu. Morbi feugiat, arcu id bibendum vulputate, risus mi finibus enim, sed pulvinar ipsum sem eu risus. Aenean accumsan elementum ipsum, eu porttitor libero auctor at. Duis nec ipsum velit. Aliquam ac ullamcorper nisl. Duis mattis malesuada leo, quis egestas turpis molestie nec. Curabitur dui tortor, volutpat quis varius et, posuere eget augue. Praesent sed pretium dui. Vivamus auctor ex vitae nisl commodo interdum.
+If you are in the EU or our services target EU residents, we rely on the **GDPR lawful bases** of consent, contract, legal obligation, or legitimate interests (as applicable).
+
+---
+
+## 4. How long we retain your data
+We retain your personal data only as long as necessary to fulfill the purpose for which it was collected, or as required by law.  
+After this period, we securely delete or anonymize your data.
+
+---
+
+## 5. How we protect your data
+We implement appropriate technical and organizational measures to safeguard your personal data (e.g., secure hosting, encryption, access controls).  
+Because no online system is completely secure, we cannot guarantee absolute protection of your data.
+
+---
+
+## 6. Transfer of your data outside Switzerland/EU
+Where applicable, your personal data may be transferred to service providers or third parties outside Switzerland or the EU/EEA.  
+We ensure adequate safeguards are in place, such as **Standard Contractual Clauses** or relying on an adequacy decision.
+
+---
+
+## 7. Your rights
+Under the FADP and GDPR, you have the right to:
+
+- Access your personal data.  
+- Request correction or deletion of your personal data.  
+- Restrict or object to processing.  
+- Request data portability (where applicable).  
+- Withdraw consent at any time (if processing is based on consent).  
+- Lodge a complaint with a supervisory authority, such as the **Swiss FDPIC**.
+
+---
+
+## 8. Cookies and tracking technologies
+We use cookies and other tracking technologies to improve user experience, gather analytics, and deliver personalized content.  
+You may manage or disable cookies through your browser settings.  
+Disabling cookies may affect some website features.
+
+---
+
+## 9. Third-party links and services
+Our website may contain links to third-party websites and use third-party services (e.g., analytics, form processors).  
+These parties have their own privacy policies; we recommend reviewing them.  
+We are not responsible for their data processing practices.
+
+---
+
+## 10. Changes to this Privacy Policy
+We may update this Privacy Policy from time to time to reflect changes in our practices or regulatory requirements.  
+The revised version will be published on our website, and the **“Effective date”** will be updated accordingly.
+
+---
+
+## 11. Contact us
+If you have any questions or requests regarding your personal data or this Privacy Policy, please contact us:
+
+**VibeZurich**  
+Email: [vibezurich@protonmail.com](mailto:vibezurich@protonmail.com)  
+Switzerland

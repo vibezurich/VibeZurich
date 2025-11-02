@@ -1,7 +1,7 @@
 ---
-title: AWE.SOME Feature 4
+title: Present your creation!
 weight: 4
 icon: icon4.svg
 ---
 
-Maecenas pulvinar ultricies dolor, vitae sagittis nunc aliquam non. Cras vitae eros mi. Pellentesque ac orci mi. Ut dignissim tincidunt ex id tincidunt.
+At the end of the day it is showtime! Each team presents what they have built. Live demos only, no PowerPoints allowed. Celebrate creativity, grit, and teamwork.

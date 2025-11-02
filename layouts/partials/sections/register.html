@@ -7,11 +7,12 @@
         <div class="font-light text-gray-400 text-xl">
             {{ $reg.Content }}
         </div>
-        <form class="w-full max-w-lg my-20 mx-auto" action="#" method="post" id="registration-form" target="_blank" validate>
+        <form id="registerForm" class="w-full max-w-lg my-20 mx-auto" action="https://formspree.io/f/xvgvvwyw" method="POST">
+            <input type="hidden" name="_next" value="/thank-you">
             <div class="flex items-center border-b border-pink-600 py-2">
-                <input class="appearance-none bg-transparent border border-transparent w-full text-gray-200 focus:outline-none focus:bg-gray-400 focus:text-gray-800 focus:border-gray-400 mr-3 py-2 px-3" type="email" value="" name="EMAIL" placeholder="sheldon.cooper@liamg.com" aria-label="Email Address" required>
+                <input class="appearance-none bg-transparent border border-transparent w-full text-gray-200 focus:outline-none focus:bg-gray-400 focus:text-gray-800 focus:border-gray-400 mr-3 py-2 px-3" type="email" value="" name="email" placeholder="vibe.withus@gmail.com" aria-label="Email Address" required>
                 <button class="flex-shrink-0 bg-pink-600 border-pink-600 hover:bg-gray-800 hover:text-pink-600 border text-gray-200 py-2 px-4" type="submit" name="subscribe">
-                    Sign Up
+                    REGISTER!
                 </button>
             </div>
             <label class="block text-gray-200 text-left px-2 mt-4" for="gdpr_37169">
@@ -21,5 +22,24 @@
                 </span>
             </label>
         </form>
+        <script>
+            document.getElementById("registerForm").addEventListener("submit", async e => {
+              e.preventDefault();
+              const form = e.target;
+            
+              try {
+                const res = await fetch(form.action, {
+                  method: form.method,
+                  body: new FormData(form),
+                  headers: { "Accept": "application/json" }
+                });
+            
+                if (res.ok) window.location.href = "/thank-you";
+                else alert("Oops! Something went wrong.");
+              } catch {
+                alert("Submission failed. Please try again.");
+              }
+            });
+            </script>
     </div>
 </div>
