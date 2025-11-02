@@ -1,5 +1,5 @@
 # SETUP
-baseurl = "https://github.com/vibezurich/VibeZurich"
+baseurl = "https://vibezurich.github.io/VibeZurich/"
 DefaultContentLanguage = "en"
 publishdir = "public"
 canonifyUrls = "true"
