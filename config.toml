@@ -3,6 +3,7 @@ baseurl = "https://vibezurich.github.io/VibeZurich/"
 DefaultContentLanguage = "en"
 publishdir = "public"
 canonifyUrls = "true"
+relativeURLs = true
 disableKinds = ["RSS","taxonomy","taxonomyTerm"] # disable hugo's content that we don't need...
 
 title = "VibeZurich - From idea to app in a Day" # page title -> see ./layouts/partials/head.html
