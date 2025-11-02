@@ -6,6 +6,8 @@
   "scripts": {
     "start": "gulp css && hugo server",
     "deploy": "gulp css && hugo --minify"
+    "build": "gulp css"
+
   },
   "repository": {
     "type": "git",
