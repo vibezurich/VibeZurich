@@ -3,8 +3,6 @@ title: "Thank You!"
 description: "Thanks for signing up for VibeZurich"
 ---
 
-![Success](/img/undraw_online-cv_4iq9-2.svg)
-
 ## 🎉 You're In!
 
 Thanks for joining the VibeZurich community! We're excited to have you on board. Your email has been securely added to our list.
