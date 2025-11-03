@@ -4,5 +4,4 @@ weight: 3
 icon: icon3.svg
 ---
 
-Now the magic begins. 
-8 hours of pure creative energy. Code, design, test, break things, fix them, and watch your idea come to life surrounded by other passionate builders.
+Dive into 8 hours of intense coding. Build, debug, and ship with passionate devs.

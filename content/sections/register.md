@@ -7,5 +7,5 @@ title: Registration
   
      
 
-👉 **Spots are limited!**  
+👉 **Spots are limited! Secure your spot before it's gone!**  
 Fill out the form below to secure your place and vibe with the best creators in town.

@@ -4,4 +4,4 @@ weight: 1
 icon: icon1.svg
 ---
 
-Brainstorm freely. An iOS app, a startup idea, an Agentic AI workflow. Anything is possible. There are no limits, only imagination.
+Brainstorm wildly. An iOS app, startup idea, or AI workflow. Anything goes; imagination is your limit.
