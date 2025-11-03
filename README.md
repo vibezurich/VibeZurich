@@ -1,58 +1,120 @@
-# hugo-landing-page
+# VibeZurich Landing Page
 
-A simple landing page built with Hugo and Tailwind CSS
+[![Hugo](https://img.shields.io/badge/Hugo-0.58+-blue.svg)](https://gohugo.io/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-1.4+-38B2AC.svg)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-000000.svg)](https://pages.github.com/)
 
-**Other versions**
+A dynamic landing page for **VibeZurich**, a one-day coding event where teams build and deploy apps in just 8 hours on **29 November 2025**. Built with Hugo and Tailwind CSS for a fast, responsive experience.
 
-- [11ty](https://github.com/ttntm/11ty-landing-page)
-- [Astro](https://github.com/ttntm/astro-landing-page)
+🌐 **[Live Site](https://vibezurich.github.io/VibeZurich/)** | 📖 **[Repository](https://github.com/vibezurich/VibeZurich)**
 
-## How to use this template
+## Screenshots
 
-**Requirements:**
+![Landing Page Screenshot](./static/img/main_image.svg)  
+*Hero section with animated text and call-to-action.*
 
-1. Hugo (developed and tested with version 0.58.0)
-2. Tailwind CSS
-3. gulp
+## Features
 
-All other dependencies are either linked from a CDN or included in this repository.
+- **Header with Animated Text**: Engaging intro with smooth animations.
+- **About Section**: Details about the VibeZurich event.
+- **Features Section**: 4-step process highlighting key aspects.
+- **Registration Form**: Easy sign-up for participants.
+- **Privacy & Thank You Pages**: Additional static pages for compliance and confirmation.
+- **Responsive Design**: Optimized for all devices using Tailwind CSS.
+- **Fast Builds**: Powered by Hugo for static site generation.
 
-**Setup:**
+## Tech Stack
 
-1. Fork, clone or download
-2. `cd` into the root folder
-3. run `npm install`
-4. run `npm run start`
-5. open a browser and go to `http://localhost:1313`
+- **Hugo**: Static site generator for fast builds and SEO.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Gulp**: Task runner for CSS processing.
+- **Hosted on GitHub Pages**: Free and reliable hosting.
 
-**Basic configuration:**
+## Installation
 
-1. Hugo -> `./config.toml`
-2. Tailwind -> `./tailwind.config.js`
-3. Netlify -> `./netlify.toml`
+### Prerequisites
 
-> For better development experience, please have a look at `./tailwind.config.js` and either disable `purge` or comment it - otherwise you'll have a very limited selection of Tailwind classes available.
+- [Hugo](https://gohugo.io/getting-started/installing/) (version 0.58.0 or later)
+- [Node.js](https://nodejs.org/) and npm
+- [Gulp](https://gulpjs.com/) (install globally: `npm install -g gulp-cli`)
 
-Keep in mind that `page.css` can be re-built anytime via `gulp css` - no need to make changes to the generated files in `./static/css`.
+### Setup
 
-Please note that `gulp css` _does not_ include that `normalize.css` file used for the 2 regular pages (imprint, privacy).
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/vibezurich/VibeZurich.git
+   cd VibeZurich
+   ```
 
-**Change Content:**
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-All page content is stored in `./content`.
+3. **Start the development server**:
+   ```bash
+   npm run start
+   ```
 
-`./content/sections/` is where each section's content can be found.
+4. **Open your browser** and navigate to `http://localhost:1313`.
 
-The individual tile/card elements for the "Features" screen are stored in `./content/sections/features/`
+> **Note**: For a better development experience, edit `./tailwind.config.js` to disable `purge` or comment it out to access all Tailwind classes.
 
-**Change Templates/Layout:**
+## Usage
 
-Page structure and templates are stored in `./layouts` and can be edited there.
+### Configuration
 
-Best have a look at `./layouts/_default/baseof.html` first to understand how it all comes together - the page itself is constructed from partials in `./layouts/partials` and each section has a corresponding template file stored in the folder `./layouts/partials/sections`.
+- **Hugo Settings**: Edit `./config.toml` for site-wide configurations like title, base URL, and parameters.
+- **Tailwind Customization**: Modify `./tailwind.config.js` for theme adjustments.
+- **Netlify (if deploying there)**: Configure `./netlify.toml` for build settings.
 
-`index.html` in `./layouts` simply arranges everything, i.e. sections can be re-ordered/removed/... there.
+### Content Management
 
-**Change images:**
+- **Page Content**: All content is in `./content`. Sections are in `./content/sections/`.
+- **Features**: Individual feature cards are in `./content/sections/features/`.
+- **Templates**: Layouts are in `./layouts`. Start with `./layouts/_default/baseof.html` to understand the structure. Partials are in `./layouts/partials/sections`.
+- **Images**: Replace placeholders in `./static/img` with your assets.
 
-Images are stored in `./static/img`; everything in there can be considered a placeholder that should eventually be replaced with your actual production images.
+### Building CSS
+
+Rebuild CSS anytime with:
+```bash
+gulp css
+```
+This generates `./static/css/page.css`. Note: `normalize.css` is not included in this build for regular pages.
+
+## Deployment
+
+The site is hosted on **GitHub Pages**. To deploy:
+
+1. **Build the site**:
+   ```bash
+   npm run deploy
+   ```
+
+2. **Push to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Deploy updates"
+   git push origin main
+   ```
+
+GitHub Actions (see `.github/workflows/hugo.yml`) will automatically build and deploy on pushes to the main branch.
+
+For other platforms like Netlify, use the provided `./netlify.toml` configuration.
+
+## Contributing
+
+We welcome contributions! To get started:
+
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feature/your-feature`.
+3. Make your changes and test locally.
+4. Submit a pull request with a clear description.
+
+Please ensure your code follows the existing style and includes any necessary tests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
