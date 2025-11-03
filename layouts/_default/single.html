@@ -17,6 +17,9 @@
             <div class="font-light text-black text-lg">
                 {{ .Content }}
             </div>
+            {{ if eq .Title "Thank You!" }}
+            <p class="mt-4"><a href="{{ .Site.BaseURL }}" class="text-pink-600 hover:text-pink-800">← Back to Home</a></p>
+            {{ end }}
         </div>
     </div>
 

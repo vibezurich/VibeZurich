@@ -1,8 +1,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preload" href="{{ "css/page.css" | relURL }}" as="style">
+<link rel="preload" href="{{ "css/page.css" | absURL }}" as="style">
 
-<link rel="icon" href="{{ "vibezurich-favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="icon" href="{{ "vibezurich-favicon.svg" | absURL }}" type="image/svg+xml">
 
 <!-- PRELOAD CDN SCRIPTS -->
 <link rel="preconnect" href="https://unpkg.com/popper.js@1" as="script">
@@ -23,7 +23,7 @@
 
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Params.author.name }}{{ end }}</title>
 
-<link rel="stylesheet" href="{{ "css/page.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/page.css" | absURL }}">
 
 {{- $ga := .Site.Params.googleAnalytics | default "" -}}
 {{- if $ga -}}

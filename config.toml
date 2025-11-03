@@ -28,6 +28,6 @@ googleAnalytics = "" # if needed...
 
 
 [markup.goldmark.renderer]
-unsafe = true
+# unsafe = true
 
-ignoreLogs = ['warning-goldmark-raw-html']
+# ignoreLogs = ['warning-goldmark-raw-html']
